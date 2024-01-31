@@ -19,9 +19,12 @@ namespace AccessibleTreeList_v23_2
         public Form1()
         {
             InitializeComponent();
+
+            //SingletonDialog.Instance.ShowDialog();
+            //SingletonDialog.Instance.ShowDialog();
             //OverwriteCombo();
-            OverwriteTree();
-            EnhanceAccessibility();
+            //OverwriteTree();
+            //EnhanceAccessibility();
 
         }
         void OnOuterFormCreating(object sender, OuterFormCreatingEventArgs e)
@@ -110,12 +113,12 @@ namespace AccessibleTreeList_v23_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SingletonDialog.Instance.ShowDialog();
+            //SingletonDialog.Instance.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SingletonDialog.Instance.ShowDialog();
+            //SingletonDialog.Instance.ShowDialog();
         }
     }
     

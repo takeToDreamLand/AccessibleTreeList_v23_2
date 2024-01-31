@@ -15,30 +15,35 @@ namespace AccessibleTreeList_v23_2
     public partial class SingletonDialog : XtraForm
     {    
         // 静态变量用于保存唯一实例
-        private static SingletonDialog instance;
-
-        // 私有构造函数，防止外部直接实例化
+        public static SingletonDialog instance;
         public SingletonDialog()
         {
             InitializeComponent();
             LoadTree();
         }
 
-        public static SingletonDialog Instance
+        //public static SingletonDialog Instance
+        //{
+        //    get
+        //    {
+        //        if (instance == null || instance.IsDisposed)
+        //        {
+        //            instance = new SingletonDialog();
+        //        }
+        //        return instance;
+        //    }
+        //}
+        public void Reinit()
         {
-            get
-            {
-                if (instance == null || instance.IsDisposed)
-                {
-                    instance = new SingletonDialog();
-                }
-                return instance;
-            }
-        }
+            LoadTree();
+            //this.Controls.Clear();
+            //this.Controls.Add(this.treeList1);
 
-       
+            //EnhanceAccessibility();
+        }
         private void LoadTree()
         {
+
             this.treeList1.ClearNodes();
             this.treeList1.Location = new System.Drawing.Point(0, 0);
             this.treeList1.Name = "treeList1";
@@ -70,6 +75,21 @@ namespace AccessibleTreeList_v23_2
             "01/01/2012 00:00:00",
             "New Year\'s Day",
             "United States"}, -1);
+            
+        }
+        void EnhanceAccessibility()
+        {
+            // 增强目标控件Accessibility能力，表现为单元格被识别时有更准确的名称。
+            DevExpress.Accessibility.DXAccessible.QueryAccessibleInfo += (s, e) =>
+            {
+                // 增强treeList2控件中树节点的Accessibility能力
+                if (e.Role == AccessibleRole.OutlineItem
+                    && e.OwnerControl == this.treeList1)
+                {
+                    Console.WriteLine(e.Name);
+                    return;
+                }
+            };
         }
     }
 }

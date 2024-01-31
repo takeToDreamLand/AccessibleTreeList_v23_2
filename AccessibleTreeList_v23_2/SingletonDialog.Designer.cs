@@ -1,4 +1,6 @@
-﻿namespace AccessibleTreeList_v23_2
+﻿
+using System;
+namespace AccessibleTreeList_v23_2
 {
     partial class SingletonDialog
     {
@@ -69,7 +71,8 @@
             this.Name = "SingletonDialog";
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             this.ResumeLayout(false);
-
+            Console.WriteLine("完成初始化");
+            Console.WriteLine(this.Controls);
         }
 
         #endregion
