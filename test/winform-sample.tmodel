@@ -1,0 +1,140 @@
+{
+  "ntype": "app",
+  "process": "",
+  "controls": [
+    {
+      "ntype": "uia",
+      "nname": "main",
+      "identifyProperties": {
+        "type": "Window",
+        "automationId": "SingletonDialog"
+      },
+      "cachedProperties": {
+        "type": "Window",
+        "automationId": "SingletonDialog",
+        "className": "WindowsForms10.Window.8.app.0.1b0ed41_r9_ad1",
+        "value": false,
+        "boundingRectangle": "[52,52,442,290]",
+        "appName": "AccessibleTreeList_v23_2",
+        "appPath": "C:\\Users\\Shaw\\source\\repos\\AccessibleTreeList_v23_2\\AccessibleTreeList_v23_2\\bin\\Debug\\AccessibleTreeList_v23_2.exe"
+      },
+      "children": [
+        {
+          "ntype": "uia",
+          "nname": "tree",
+          "identifyProperties": {
+            "type": "Tree",
+            "automationId": "treeList1"
+          },
+          "cachedProperties": {
+            "type": "Tree",
+            "automationId": "treeList1",
+            "className": "WindowsForms10.Window.8.app.0.1b0ed41_r9_ad1",
+            "value": false,
+            "boundingRectangle": "[53,83,331,209]"
+          },
+          "image": {
+            "imgPath": "uia8.png",
+            "rect": "0,0,331,209"
+          },
+          "children": [
+            {
+              "ntype": "uia",
+              "nname": "container",
+              "identifyProperties": {
+                "type": "Group",
+                "name": "Data Panel"
+              },
+              "cachedProperties": {
+                "type": "Group",
+                "name": "Data Panel",
+                "value": false,
+                "boundingRectangle": "[54,108,329,126]"
+              },
+              "children": [
+                {
+                  "ntype": "uia",
+                  "nname": "Node2_2",
+                  "identifyProperties": {
+                    "type": "TreeItem",
+                    "name": "Node2"
+                  },
+                  "cachedProperties": {
+                    "type": "TreeItem",
+                    "name": "Node2",
+                    "value": "New Year's Day",
+                    "boundingRectangle": "[54,150,329,21]"
+                  },
+                  "children": [
+                    {
+                      "ntype": "uia",
+                      "nname": "Display_Name_row_2_1",
+                      "identifyProperties": {
+                        "type": "DataItem",
+                        "name": "Display Name row 2"
+                      },
+                      "cachedProperties": {
+                        "type": "DataItem",
+                        "name": "Display Name row 2",
+                        "value": "New Year's Day",
+                        "boundingRectangle": "[96,150,287,20]"
+                      },
+                      "image": {
+                        "imgPath": "uia7.png",
+                        "rect": "0,0,287,20"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ntype": "uia",
+      "nname": "About_DevExpress",
+      "identifyProperties": {
+        "type": "Window",
+        "automationId": "AboutForm12"
+      },
+      "cachedProperties": {
+        "type": "Window",
+        "automationId": "AboutForm12",
+        "className": "WindowsForms10.Window.8.app.0.1b0ed41_r9_ad1",
+        "title": "About DevExpress",
+        "value": false,
+        "boundingRectangle": "[660,269,600,502]",
+        "appName": "AccessibleTreeList_v23_2",
+        "appPath": "C:\\Users\\Shaw\\source\\repos\\AccessibleTreeList_v23_2\\AccessibleTreeList_v23_2\\bin\\Debug\\AccessibleTreeList_v23_2.exe"
+      },
+      "image": {
+        "imgPath": "uia.png",
+        "rect": "0,0,600,502"
+      },
+      "children": [
+        {
+          "ntype": "uia",
+          "nname": "Close",
+          "identifyProperties": {
+            "type": "Button",
+            "name": "Close"
+          },
+          "cachedProperties": {
+            "type": "Button",
+            "automationId": "657904",
+            "className": "WindowsForms10.Window.8.app.0.1b0ed41_r9_ad1",
+            "name": "Close",
+            "value": false,
+            "boundingRectangle": "[1242,271,15,15]"
+          },
+          "image": {
+            "imgPath": "uia1.png",
+            "rect": "0,0,15,15"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -17,15 +17,10 @@ namespace AccessibleTreeList_v23_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //new Form1().Show();
-            SingletonDialog instance = new SingletonDialog();
-
-            //SingletonDialog.Instance.ShowDialog();
-            //SingletonDialog.Instance.Reinit();
-            //SingletonDialog.Instance.ShowDialog();
-            instance.ShowDialog();
-            instance.Reinit();
-            instance.ShowDialog();
+            
+            SingletonDialog.Instance.ShowDialog();
+            SingletonDialog.Instance.Reinit();
+            SingletonDialog.Instance.ShowDialog();
             Application.Run();
         }
     }

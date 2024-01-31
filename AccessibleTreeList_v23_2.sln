@@ -5,11 +5,6 @@ VisualStudioVersion = 15.0.26228.04
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessibleTreeList_v23_2", "AccessibleTreeList_v23_2\AccessibleTreeList_v23_2.csproj", "{1D53DCB8-F30A-48CF-A232-74429285DFA9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6144BC6D-E6BB-4271-877B-C92E127F5A63}"
-	ProjectSection(SolutionItems) = preProject
-		test.txt = test.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

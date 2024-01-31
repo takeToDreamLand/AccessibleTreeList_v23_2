@@ -12,84 +12,43 @@ using DevExpress.XtraEditors;
 
 namespace AccessibleTreeList_v23_2
 {
+    // 实现一个单例模式的对话框，对话框中含有一个树控件（TreeList）
+    // 默认情况下，当第二次打开对话框，树控件内部会变得无法被UIA访问，换言之失去了Accessibility能力。
+    // 通过调研发现，重新初始化和重新挂载树控件会有帮助。
     public partial class SingletonDialog : XtraForm
     {    
-        // 静态变量用于保存唯一实例
         public static SingletonDialog instance;
+        private static int initCount;
         public SingletonDialog()
         {
             InitializeComponent();
             LoadTree();
         }
 
-        //public static SingletonDialog Instance
-        //{
-        //    get
-        //    {
-        //        if (instance == null || instance.IsDisposed)
-        //        {
-        //            instance = new SingletonDialog();
-        //        }
-        //        return instance;
-        //    }
-        //}
+        public static SingletonDialog Instance
+        {
+            get
+            {
+                initCount += 1;
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new SingletonDialog();
+                }
+                return instance;
+            }
+        }
         public void Reinit()
         {
+            //InitializeComponent(); // 再次初始化
             LoadTree();
-            //this.Controls.Clear();
-            //this.Controls.Add(this.treeList1);
-
-            //EnhanceAccessibility();
+            //Controls.Clear(); // 清理，重新挂载Tree控件
+            //Controls.Add(this.treeList1);
         }
         private void LoadTree()
         {
-
             this.treeList1.ClearNodes();
-            this.treeList1.Location = new System.Drawing.Point(0, 0);
-            this.treeList1.Name = "treeList1";
-            this.treeList1.BeginUnboundLoad();
-            this.treeList1.EndUnboundLoad();
-            this.treeList1.OptionsBehavior.PopulateServiceColumns = true;
-            this.treeList1.Size = new System.Drawing.Size(331, 209);
             this.treeList1.AppendNode(new object[] {
-            "12/31/2022 00:00:00",
-            "New Year\'s Eve",
-            "Australia"}, -1);
-            this.treeList1.AppendNode(new object[] {
-            "01/01/2012 00:00:00",
-            "New Year\'s Day",
-            "Japan"}, -1);
-            this.treeList1.AppendNode(new object[] {
-            "01/01/2012 00:00:00",
-            "New Year\'s Day",
-            "Russia"}, -1);
-            this.treeList1.AppendNode(new object[] {
-            "01/01/2012 00:00:00",
-            "New Year\'s Day",
-            "United Arab Emirates"}, -1);
-            this.treeList1.AppendNode(new object[] {
-            "01/01/2012 00:00:00",
-            "New Year\'s Day",
-            "United Kingdom"}, -1);
-            this.treeList1.AppendNode(new object[] {
-            "01/01/2012 00:00:00",
-            "New Year\'s Day",
-            "United States"}, -1);
-            
-        }
-        void EnhanceAccessibility()
-        {
-            // 增强目标控件Accessibility能力，表现为单元格被识别时有更准确的名称。
-            DevExpress.Accessibility.DXAccessible.QueryAccessibleInfo += (s, e) =>
-            {
-                // 增强treeList2控件中树节点的Accessibility能力
-                if (e.Role == AccessibleRole.OutlineItem
-                    && e.OwnerControl == this.treeList1)
-                {
-                    Console.WriteLine(e.Name);
-                    return;
-                }
-            };
+            string.Format("第{0}次初始化", initCount)}, -1);
         }
     }
 }
